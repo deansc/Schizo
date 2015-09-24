@@ -1,6 +1,6 @@
 # Schizo
 
-**TODO: Add description**
+**Converts every other word to uppercase**
 
 ## Installation
 
