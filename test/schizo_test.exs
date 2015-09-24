@@ -13,4 +13,16 @@ defmodule SchizoTest do
   test "uppercase converts every other word to uppercase" do
     assert Schizo.uppercase("foo bar baz whee") == "foo BAR baz WHEE"
   end
+
+  test "unvowel doesn't change the first word" do
+    assert Schizo.unvowel("foo") == "foo"
+  end
+
+  test "unvowel removes the second word's vowels" do
+    assert Schizo.unvowel("foo bar") == "foo br"
+  end
+
+  test "unvowel removes every other word's vowels" do
+    assert Schizo.unvowel("foo bar baz whee") == "foo br baz wh"
+  end
 end
