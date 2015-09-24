@@ -7,6 +7,10 @@ defmodule Schizo do
     transform_every_other_word(string, &unvoweler/1)
   end
 
+  def lowercase(string) do
+    transform_every_other_word(string, &lowercaser/1)
+  end
+
   defp transform_every_other_word(string, transformation) do
     string
       |> String.split(" ")
@@ -21,6 +25,10 @@ defmodule Schizo do
 
   defp unvoweler(input) do
     transformer(input, fn (word) -> String.replace(word, ~r/[aeiou]/i, "") end)
+  end
+
+  defp lowercaser(input) do
+    transformer(input, &String.downcase/1)
   end
 
   defp transformer({word, index}, transformation) do

@@ -10,6 +10,9 @@ iex> Schizo.uppercase("foo bar baz")
 
 iex> Schizo.unvowel("foo bar baz")
 "foo br baz"
+
+iex> schizo.lowercase("Foo BAR BAZ")
+"Foo bar BAZ"
 ```
 
 ## Installation
