@@ -7,7 +7,7 @@ defmodule Schizo do
       |> Enum.join(" ")
   end
 
-  def uppercase_every_other_word({word, index}) do
+  defp uppercase_every_other_word({word, index}) do
     cond do
       rem(index, 2) == 0 -> word
       rem(index, 2) == 1 -> String.upcase word
