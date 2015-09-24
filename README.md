@@ -1,6 +1,6 @@
 # Schizo
 
-**Converts every other word to uppercase**
+**Just play with string :kissing_heart:**
 
 ## Installation
 
