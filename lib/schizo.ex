@@ -1,16 +1,32 @@
 defmodule Schizo do
   def uppercase(string) do
+    transform_every_other_word(string, &uppercaser/1)
+  end
+
+  def unvowel(string) do
+    transform_every_other_word(string, &unvoweler/1)
+  end
+
+  defp transform_every_other_word(string, transformation) do
     string
       |> String.split(" ")
       |> Stream.with_index
-      |> Enum.map(&uppercase_every_other_word/1)
+      |> Enum.map(transformation)
       |> Enum.join(" ")
   end
 
-  defp uppercase_every_other_word({word, index}) do
+  defp uppercaser(input) do
+    transformer(input, &String.upcase/1)
+  end
+
+  defp unvoweler(input) do
+    transformer(input, fn (word) -> String.replace(word, ~r/[aeiou]/i, "") end)
+  end
+
+  defp transformer({word, index}, transformation) do
     cond do
       rem(index, 2) == 0 -> word
-      rem(index, 2) == 1 -> String.upcase word
+      rem(index, 2) == 1 -> transformation.(word)
     end
   end
 end
