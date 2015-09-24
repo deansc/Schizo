@@ -2,6 +2,16 @@
 
 **Just play with string :kissing_heart:**
 
+## Example
+
+```elixir
+iex> Schizo.uppercase("foo bar baz")
+"foo BAR baz"
+
+iex> Schizo.unvowel("foo bar baz")
+"foo br baz"
+```
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
