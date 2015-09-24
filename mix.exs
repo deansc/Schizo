@@ -4,10 +4,12 @@ defmodule Schizo.Mixfile do
   def project do
     [app: :schizo,
      version: "0.0.1",
-     elixir: "~> 1.1-rc",
+     elixir: "~> 1.0",
+     description: "Transform every other word in a sentence with some transformers.",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     package: package]
   end
 
   # Configuration for the OTP application
@@ -28,5 +30,12 @@ defmodule Schizo.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     []
+  end
+
+  defp package do
+    [files: ~w(lib mix.exs README.md),
+     contributors: ["Teerawat Lamanchart"],
+     licenses: ["Unlicense"],
+     links: %{"GitHub" => "https://github.com/teerawat1992/Schizo"}]
   end
 end
